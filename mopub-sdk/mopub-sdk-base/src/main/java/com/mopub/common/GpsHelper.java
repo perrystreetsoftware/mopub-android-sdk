@@ -178,11 +178,11 @@ public class GpsHelper {
     }
 
     static String reflectedGetAdvertisingId(final Object adInfo, final String defaultValue) {
-        try {
-            return (String) MethodBuilderFactory.create(adInfo, "getId").execute();
-        } catch (Exception exception) {
+        // try {
+        //     return (String) MethodBuilderFactory.create(adInfo, "getId").execute();
+        // } catch (Exception exception) {
             return defaultValue;
-        }
+        // }
     }
 
     static boolean reflectedIsLimitAdTrackingEnabled(final Object adInfo, final boolean defaultValue) {
@@ -204,4 +204,3 @@ public class GpsHelper {
         sAdvertisingIdClientClassName = className;
     }
 }
-
