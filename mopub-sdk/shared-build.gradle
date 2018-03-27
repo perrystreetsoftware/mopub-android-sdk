@@ -15,7 +15,6 @@ project.version = '4.19.0'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
     lintOptions { abortOnError false }
     useLibrary 'org.apache.http.legacy'
 

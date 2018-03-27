@@ -15,7 +15,6 @@ project.version = '4.19.0'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.2'
     lintOptions { abortOnError false }
 
     defaultConfig {

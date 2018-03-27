@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.mopub.volley:mopub-volley:1.1.0'
+    implementation 'com.mopub.volley:mopub-volley:1.1.0'
 
 //    def avidEnabled = project.hasProperty("mopub.avidEnabled") ? project.getProperty("mopub.avidEnabled").toBoolean() : true
 //    if (avidEnabled) {
