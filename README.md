@@ -39,7 +39,7 @@ The MoPub SDK is available via:
     }
 
     dependencies {
-        compile('com.mopub:mopub-sdk:4.19.0@aar') {
+        implementation('com.mopub:mopub-sdk:5.0.0@aar') {
             transitive = true
         }
     }
@@ -61,27 +61,27 @@ The MoPub SDK is available via:
         // ... other project dependencies
 
         // For banners
-        compile('com.mopub:mopub-sdk-banner:4.19.0@aar') {
+        implementation('com.mopub:mopub-sdk-banner:5.0.0@aar') {
             transitive = true
         }
         
         // For interstitials
-        compile('com.mopub:mopub-sdk-interstitial:4.19.0@aar') {
+        implementation('com.mopub:mopub-sdk-interstitial:5.0.0@aar') {
             transitive = true
         }
 
         // For rewarded videos. This will automatically also include interstitials
-        compile('com.mopub:mopub-sdk-rewardedvideo:4.19.0@aar') {
+        implementation('com.mopub:mopub-sdk-rewardedvideo:5.0.0@aar') {
             transitive = true
         }
 
         // For native static (images).
-        compile('com.mopub:mopub-sdk-native-static:4.19.0@aar') {
+        implementation('com.mopub:mopub-sdk-native-static:5.0.0@aar') {
             transitive = true
         }
 
         // For native video. This will automatically also include native static
-        compile('com.mopub:mopub-sdk-native-video:4.19.0@aar') {
+        implementation('com.mopub:mopub-sdk-native-video:5.0.0@aar') {
             transitive = true
         }
     }
@@ -109,9 +109,11 @@ The MoPub SDK is available via:
 ## New in this Version
 Please view the [changelog](https://github.com/mopub/mopub-android-sdk/blob/master/CHANGELOG.md) for a complete list of additions, fixes, and enhancements in the latest release.
 
-- Updated Facebook Audience Network adapters to 4.26.1.
-- Updated Flurry adapters to 8.1.0.
-- Updated Millennial rewarded ads adapters to 6.6.1.
+- General Data Protection Regulation (GDPR) update to support a way for publishers to determine GDPR applicability and to obtain and manage consent from users in European Economic Area, the United Kingdom, or Switzerland to serve personalized ads.
+- New SDK initialization method to initialize consent management and rewarded video ad networks. Required for receiving personalized ads. In future versions of the SDK, initialization will be required to receive ads.
+- Updated network stack to MoPub-Volley-2.0.0.
+- Updated ad requests to use POST instead of GET.
+- All communication with MoPub servers is now made via HTTPS.
 
 ## Requirements
 
@@ -119,8 +121,14 @@ Please view the [changelog](https://github.com/mopub/mopub-android-sdk/blob/mast
 - android-support-v4.jar, r26 (**Updated in 4.18.0**)
 - android-support-annotations.jar, r26 (**Updated in 4.18.0**)
 - android-support-v7-recyclerview.jar, r26 (**Updated in 4.18.0**)
-- MoPub Volley Library (mopub-volley-1.1.0.jar - available on JCenter) (**Updated in 3.6.0**)
+- MoPub Volley Library (mopub-volley-2.0.0.jar - available on JCenter) (**Updated in 5.0.0**)
 - **Recommended** Google Play Services 11.4.0
+
+## Upgrading to SDK 5.0
+
+Please see the [Getting Started Guide](https://developers.mopub.com/docs/android/getting-started/) for instructions on upgrading from SDK 4.X to SDK 5.0.
+
+For GDPR-specific upgrading instructions, also see the [GDPR Integration Guide](https://developers.mopub.com/docs/android/gdpr/).
 
 ## <a name="upgradeRepositoryViewability"></a>Upgrading from 4.15.0 and Prior
 In 4.16.0, dependencies were added to viewability libraries provided by AVID and Moat. Apps upgrading from previous versions must add
@@ -134,7 +142,7 @@ Normally, to add the MoPub SDK to your app via JCenter, your `build.gradle` woul
 
 ```	
 dependencies {
-    compile('com.mopub:mopub-sdk:4.18.0@aar') {
+    implementation('com.mopub:mopub-sdk:5.0.0@aar') {
         transitive = true
     }
 }
@@ -143,7 +151,7 @@ Update to the following to exclude one or both viewability vendors:
 
 ```
 dependencies {
-    compile('com.mopub:mopub-sdk:4.19.0@aar') {
+    implementation('com.mopub:mopub-sdk:4.20.0@aar') {
         transitive = true
         exclude module: 'libAvid-mopub' // To exclude AVID
         exclude module: 'moat-mobile-app-kit' // To exclude Moat
