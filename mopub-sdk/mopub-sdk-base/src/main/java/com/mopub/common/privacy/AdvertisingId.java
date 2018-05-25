@@ -45,7 +45,7 @@ public class AdvertisingId implements Serializable {
         Preconditions.NoThrow.checkNotNull(ifaId);
         Preconditions.NoThrow.checkNotNull(ifaId);
 
-        mAdvertisingId = ifaId;
+        mAdvertisingId = ifaId != null ? ifaId : "";
         mMopubId = mopubId;
         mDoNotTrack = limitAdTrackingEnabled;
         mLastRotation = Calendar.getInstance();
